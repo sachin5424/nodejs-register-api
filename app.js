@@ -1,0 +1,10 @@
+const express = require('express');
+const app = express()
+const mongoose_sever = require('./mongooseConn/conn')
+const Register = require("./router/register")
+const cors = require("cors")
+const body_parser = require("body-parser").json()
+app.use(cors())
+app.use(body_parser)
+app.use('/user/',Register)
+app.listen(3002)
